@@ -1,0 +1,738 @@
+\documentclass[11pt,a4paper]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Color definitions
+\definecolor{theoremblue}{RGB}{0,64,128}
+\definecolor{definitiongreen}{RGB}{0,128,0}
+\definecolor{exampleorange}{RGB}{255,140,0}
+\definecolor{notegray}{RGB}{128,128,128}
+\definecolor{highlightyellow}{RGB}{255,255,200}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Custom environments for review notes
+\newtcolorbox{reviewbox}[1][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    title=#1,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{keypoint}{
+    colback=yellow!10!white,
+    colframe=orange!75!black,
+    title=Key Point,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{formula}{
+    colback=green!5!white,
+    colframe=green!75!black,
+    title=Important Formula,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{warning}{
+    colback=red!5!white,
+    colframe=red!75!black,
+    title=Warning,
+    fonttitle=\bfseries
+}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Notes Review: \coursename}
+\cfoot{\small Last updated: \today}
+
+% Custom commands
+\newcommand{\coursename}{Course Name Here}
+\newcommand{\topicname}{Topic Name Here}
+\newcommand{\highlight}[1]{\colorbox{highlightyellow}{#1}}
+\newcommand{\important}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\concept}[1]{\textbf{\textcolor{theoremblue}{#1}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+% Code listing settings
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    captionpos=b
+}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{Notes Review}\\[0.5cm]}
+    {\LARGE \coursename\\[0.3cm]}
+    {\Large \topicname\\[1cm]}
+    {\large Your Name\\[0.5cm]}
+    {\large \today\\[2cm]}
+    
+    \begin{abstract}
+        This document contains a comprehensive review of notes for [Course/Topic]. 
+        It includes key concepts, formulas, examples, and practice problems.
+    \end{abstract}
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Section 1: Overview
+\section{Overview}
+
+\begin{reviewbox}[Topic Summary]
+    Provide a brief overview of the main topic and its importance.
+    \begin{itemize}
+        \item Main concept 1
+        \item Main concept 2
+        \item Main concept 3
+    \end{itemize}
+\end{reviewbox}
+
+\section{TODO}
+
+\begin{reviewbox}[Topic Summary]
+    TODO exam problems
+    \begin{itemize}
+        \item SS 2023 2c. sparse grids
+        \item SS 2023 3c. space filling curves
+    \end{itemize}
+\end{reviewbox}
+
+% Section 2: Key Definitions
+\section{Key Definitions}
+
+\begin{definition}[Important Term]
+    Define the important term here. For example:
+    
+    A \concept{function} $f: A \to B$ is a relation that assigns to each element 
+    $a \in A$ exactly one element $b \in B$.
+\end{definition}
+
+\begin{definition}[Understand how to convert between trigonometric and exponential using Euler's formula]
+    Define the important term here. For example:
+    
+    A \concept{function} $f: A \to B$ is a relation that assigns to each element 
+    $a \in A$ exactly one element $b \in B$.
+\end{definition}
+
+
+\begin{keypoint}
+    Remember that definitions are the foundation of understanding. 
+    Make sure you can state them precisely!
+\end{keypoint}
+
+% Section 3: Main Theorems
+\section{Main Theorems and Results}
+
+\begin{theorem}[Fundamental Theorem]
+    State the theorem here. For example:
+    
+    Let $f: [a,b] \to \R$ be continuous. Then $f$ attains its maximum and minimum 
+    values on $[a,b]$.
+\end{theorem}
+
+\begin{proof}
+    Sketch of proof or key ideas...
+\end{proof}
+
+\begin{formula}
+    Key formula to remember:
+    \begin{equation}
+        \int_a^b f(x)\,dx = F(b) - F(a)
+    \end{equation}
+    where $F'(x) = f(x)$.
+\end{formula}
+
+% Section 4: Examples
+\section{Examples and Applications}
+
+\begin{example}[Worked Example]
+    Consider the function $f(x) = x^2$. We want to find...
+    
+    \textbf{Solution:}
+    \begin{align}
+        f'(x) &= 2x \\
+        f''(x) &= 2
+    \end{align}
+    
+    Therefore, the function has a minimum at $x = 0$.
+\end{example}
+
+\begin{warning}
+    Common mistake: Don't forget to check the domain when finding extrema!
+\end{warning}
+
+\section{Endterm Summer 2025}
+
+\begin{example}[Problem 2b: Admissibility condition for wavelets]
+   Given the drawing from part (a), what conclusions can you make about the integral of the obtained wavelet? What does this imply for wavelets in general?
+   
+   \textbf{Solution:}
+   
+   \textbf{Observation from the graph:} The area above the x-axis equals the area below the x-axis. Therefore:
+   $$\int_{-\infty}^{+\infty} \psi_1(t)\,dt = 0$$
+   
+   \textbf{Implications for wavelets in general:}
+   \begin{enumerate}
+       \item \textbf{Admissibility condition:} All wavelets must satisfy $\int_{-\infty}^{+\infty} \psi(t)\,dt = 0$
+       
+       \item \textbf{Zero-mean property:} Wavelets oscillate around zero and represent fluctuations relative to the average
+       
+       \item \textbf{Complementary roles:}
+       \begin{itemize}
+           \item Scaling functions $\phi(t)$ capture average (DC) information
+           \item Wavelets $\psi(t)$ capture details and variations
+       \end{itemize}
+       
+       \item \textbf{Signal processing interpretation:} Wavelets act as band-pass filters that:
+       \begin{itemize}
+           \item Cannot detect constant signals
+           \item Capture oscillations and local changes
+           \item Are ideal for multi-scale analysis while preserving edges and transitions
+       \end{itemize}
+   \end{enumerate}
+   
+   \textbf{Key insight:} The zero-integral property ensures wavelets are orthogonal to constant functions, making them perfect for decomposing signals into different frequency bands and scales.
+\end{example}
+
+\begin{example}[Problem 2b: Admissibility condition for wavelets]
+    Given the drawing from part (a), what conclusions can you make about the integral of the obtained wavelet. What does this imply for wavelts in general?
+    
+    \textbf{Solution:}
+    \begin{align}
+        \text{1. Area above x-axis equals area below x-axis } This means the integral of the wavelt function is 0. \\
+        \text{2. This implies the mean is zero.} The wavelet basis functions will represent fluctuations to the average of the coarser level. \\
+        \text{3. The admissibility condition is met } The integral of the wavelet over all values is zero. \\
+    \end{align}
+    Main idea: Scaling function captures avergae (DC) information, while wavelts capture details. Wavelets act as band-pass filters and cannot detect constant siganls. They capture oscillations and local changes on signals.
+    Intuition: Zero-mean prop makes wavelets ideal for analyzing signals at different scales while preserving important features like edges and transitions.
+
+\end{example}
+
+\section{Endterm Summer 2023}
+
+\begin{example}[Problem 1: Discrete Fourier Periodicity]
+    Derive the relationship between $F_{k}$ and $G_{2k}$ for an N-periodic dataset f.
+    
+    \textbf{Solution:}
+    \begin{align}
+        \text{1. Write the definition of } G_{2k}: \quad & G_{2k} = \frac{1}{2N}\sum_{n=0}^{2N-1} f_n e^{-i2\pi n(2k)/(2N)} \\
+        \text{2. Simplify the exponential: } & e^{-i2\pi n(2k)/(2N)} = e^{-i2\pi nk/N} \\
+        \text{3. Split the sum into 2 parts: } & \sum_{n=0}^{2N-1} = \sum_{n=0}^{N-1} + \sum_{n=N}^{2N-1} \\
+        \text{4. Use periodicity: substitute } & n = N + j \text{ where } f_{N+j} = f_j \\
+        \text{5. Combine the sums} & \text{(both terms become identical)} \\
+        \text{6. Result: } & G_{2k} = \frac{1}{2N} \cdot 2 \sum_{n=0}^{N-1} f_n e^{-i2\pi nk/N} = F_k
+    \end{align}
+    Main idea: When applying a 2N-point DFT to N-periodic data, the even-indexed coefficients ($G_0$, $G_2$, $G_4$, , $G_{2N-2}$) are identical to the coefficients of an N-point DFT ($F_0$, $F_1$, $F_2$, $F_{N-1}$).
+    Intuition: This happens because the N-periodic data repeats itself in the second half of the 2N samples. Each data value appears exactly twice in the 2N-point transform, effectively doubling its contribution, which when normalized by the 1/(2N) factor, gives the same result as the N-point DFT.
+
+\end{example}
+
+\begin{example}[Problem 1b: Discrete Sine Transform]
+    Given a $2N$ data set $f_{-N+1}, \ldots, f_0, f_1, \ldots, f_N$ with antisymmetry condition $f_{-n} = -f_n$ and all $f_n \in \mathbb{R}$, prove that:
+    $$F_k = \frac{1}{2N} \sum_{n=-N+1}^{N} f_n \omega_{2N}^{nk} = \frac{-i}{N} \sum_{n=1}^{N-1} f_n \sin\left(\frac{\pi nk}{N}\right)$$
+    
+    \textbf{Solution:}
+    
+    \textbf{Step 1:} Apply antisymmetry to find zero values
+    \begin{itemize}
+        \item At $n=0$: $f_0 = -f_{-0} = -f_0 \Rightarrow f_0 = 0$
+        \item At $n=N$: By consistency with antisymmetry, $f_N = 0$
+    \end{itemize}
+    
+    \textbf{Step 2:} Expand the DFT sum and eliminate zero terms
+    $$F_k = \frac{1}{2N} \left[\sum_{n=-N+1}^{-1} f_n \omega_{2N}^{nk} + \sum_{n=1}^{N-1} f_n \omega_{2N}^{nk}\right]$$
+    
+    \textbf{Step 3:} Apply antisymmetry to the negative index sum
+    \begin{itemize}
+        \item Substitute $m = -n$ in the first sum
+        \item Use $f_{-m} = -f_m$ to get:
+    \end{itemize}
+    $$\sum_{n=-N+1}^{-1} f_n \omega_{2N}^{nk} = -\sum_{m=1}^{N-1} f_m \omega_{2N}^{-mk}$$
+    
+    \textbf{Step 4:} Combine the sums
+    $$F_k = \frac{1}{2N} \sum_{n=1}^{N-1} f_n \left[\omega_{2N}^{nk} - \omega_{2N}^{-nk}\right]$$
+    
+    \textbf{Step 5:} Express $\omega_{2N}$ and apply Euler's formula
+    \begin{itemize}
+        \item $\omega_{2N} = e^{2\pi i/2N} = e^{\pi i/N}$
+        \item $\omega_{2N}^{nk} - \omega_{2N}^{-nk} = e^{\pi ink/N} - e^{-\pi ink/N} = 2i\sin\left(\frac{\pi nk}{N}\right)$
+    \end{itemize}
+    
+    \textbf{Step 6:} Substitute and simplify
+    $$F_k = \frac{1}{2N} \sum_{n=1}^{N-1} f_n \cdot 2i\sin\left(\frac{\pi nk}{N}\right) = \frac{i}{N} \sum_{n=1}^{N-1} f_n \sin\left(\frac{\pi nk}{N}\right)$$
+    
+    \textbf{Note:} The negative sign in the final result depends on the DFT sign convention used.
+    
+    \textbf{Main idea:} For antisymmetric real data, the DFT reduces to a purely imaginary Discrete Sine Transform, containing only sine terms due to the odd symmetry of the input.
+\end{example}
+
+\begin{example}[Problem 1c: Computing DST coefficients using FFT]
+    Given a dataset $f_n$ for $n = 1, \ldots, N-1$, use the result from part (b) to efficiently compute the Discrete Sine Transform (DST) coefficients using FFT.
+    
+    \textbf{Solution:}
+    
+    \textbf{Step 1: Preprocessing - Create antisymmetric extension}
+    \begin{itemize}
+        \item Given: size-$N$ vector with values $f_1, f_2, \ldots, f_{N-1}$
+        \item Create size-$2N$ antisymmetric vector:
+        \begin{align}
+            f_0 &= 0\\
+            f_n &= f_n \text{ for } n = 1, \ldots, N-1\\
+            f_N &= 0\\
+            f_{-n} &= -f_n \text{ for } n = 1, \ldots, N-1
+        \end{align}
+    \end{itemize}
+    
+    \textbf{Step 2: Apply FFT}
+    Compute $F_k$ using standard FFT on the $2N$-point antisymmetric sequence.
+    
+    \textbf{Step 3: Postprocessing - Extract real DST coefficients}
+    From part (b), we know that for antisymmetric data:
+    $$F_k = \frac{-i}{N} \sum_{n=1}^{N-1} f_n \sin\left(\frac{\pi nk}{N}\right)$$
+    
+    To obtain the real-valued DST coefficients:
+    $$\hat{F}_k = -\text{Im}\{F_k\} = \frac{1}{N} \sum_{n=1}^{N-1} f_n \sin\left(\frac{\pi nk}{N}\right)$$
+    
+    for $k = 1, \ldots, N-1$.
+    
+    \textbf{Key insight:} The antisymmetric extension causes the DFT to produce purely imaginary coefficients proportional to the sine series. By extracting the imaginary part and flipping the sign, we obtain the real-valued DST coefficients efficiently using FFT.
+\end{example}
+
+\begin{example}[Problem 2: Sparse Grids]
+    The goal is to represent a 2D function using a sparse grid of level 3. First, specify which basis functions are used by giving exact ranges for level indices $\vec{l}$ and $\vec{i}$. For each basis function used on the sparse grid, mark the corresponding point in the tableau of subspaces shown in Figure 2.1.
+    
+    \textbf{Solution:}
+    \begin{enumerate}
+        \item \textbf{Identify subspaces to include:} For sparse grid $S_3$, use subspaces where $|\vec{l}|_1 = l_1 + l_2 \leq 3 + 1 = 4$.\\
+        This gives the combinations: $(1,1)$, $(1,2)$, $(1,3)$, $(2,1)$, $(2,2)$, $(3,1)$.
+        
+        \item \textbf{Determine basis functions for each subspace:} \\
+        Index set: $I_{\vec{l}} = \{\vec{i} : 1 \leq i_d < 2^{l_d}, \text{ all } i_d \text{ odd}\}$\\
+        We only use odd indices to avoid redundancy with coarser levels.
+        
+        \item \textbf{Mark grid points:} Each basis function $\phi_{\vec{l},\vec{i}}$ corresponds to a grid point $\vec{x}_{\vec{l},\vec{i}} = (i_1 \cdot 2^{-l_1}, i_2 \cdot 2^{-l_2})$ in the tableau.
+    \end{enumerate}
+    
+    \textbf{Main idea:} Sparse grids efficiently approximate multi-dimensional functions without succumbing to the curse of dimensionality. They achieve this by:
+    \begin{itemize}
+        \item Using a hierarchical structure that builds on coarser grids
+        \item Selecting only odd-indexed basis functions to avoid redundancy
+        \item Balancing computational efficiency with approximation accuracy
+    \end{itemize}
+    Each grid point corresponds to one basis function in the sparse grid representation.
+\end{example}
+
+
+\begin{example}[Problem 2b: Coefficients for sparse grid approximation]
+    Identify which coefficients must be computed to evaluate a 2D function at the point $(1/3, 2/3)$ using sparse grid approximation.
+    
+    \textbf{Solution:}
+    \begin{enumerate}
+        \item \textbf{Identify relevant subspaces:} For sparse grid level $n = 3$ in dimension $d = 2$, the subspaces satisfying $|l|_1 \leq n + d - 1 = 4$ are:
+        \begin{itemize}
+            \item $(l_1, l_2) \in \{(1,1), (1,2), (1,3), (2,1), (2,2), (3,1)\}$
+        \end{itemize}
+        
+        \item \textbf{Define index sets $I_l$:} For each level $l$, the index set contains odd integers:
+        \begin{itemize}
+            \item $I_1 = \{1\}$
+            \item $I_2 = \{1, 3\}$
+            \item $I_3 = \{1, 3, 5, 7\}$
+        \end{itemize}
+        
+        \item \textbf{Identify grid points:} For each subspace $(l_1, l_2)$ and indices $(i_1, i_2) \in I_{l_1} \times I_{l_2}$, compute:
+        $$x_{l,i} = \left(\frac{i_1}{2^{l_1}}, \frac{i_2}{2^{l_2}}\right)$$
+        
+        \item \textbf{Select relevant basis functions:} The hierarchical basis function $\phi_{l,i}(x)$ centered at $x_{l,i}$ has support on:
+        $$\left[\frac{i_1-1}{2^{l_1}}, \frac{i_1+1}{2^{l_1}}\right] \times \left[\frac{i_2-1}{2^{l_2}}, \frac{i_2+1}{2^{l_2}}\right]$$
+        
+        Include coefficient $a_{l,i}$ if and only if $(1/3, 2/3)$ lies within this support.
+    \end{enumerate}
+    
+    \textbf{Main idea:} Sparse grids efficiently approximate multi-dimensional functions by:
+    \begin{itemize}
+        \item Using hierarchical basis functions with local support
+        \item Including only basis functions whose support contains the evaluation point
+        \item Exploiting the tensor product structure while avoiding the curse of dimensionality
+    \end{itemize}
+    
+    The coefficients to evaluate correspond to basis functions that are non-zero at $(1/3, 2/3)$.
+
+    \textbf{Local support} refers to the region where a basis function is non-zero. Outside this region, the function equals zero.
+
+    \textbf{Hierarchical basis functions} in sparse grids are hat functions (piecewise linear) that resemble triangular tents. To evaluate $f$ at a given point, we only need coefficients for basis functions whose support contains that point.
+
+\end{example}
+
+\begin{example}[Problem 3: Space-filling curves]
+
+The goal is to derive the operators $M_0$ through $M_8$ that transform the first iteration of the Meurthe (Peano) curve into each sub-square of the second iteration.
+
+\textbf{Solution Approach:}
+
+For each operator $M_i$, determine the transformation needed by analyzing:
+
+\begin{enumerate}
+    \item \textbf{Scaling:} Since we divide into a $3 \times 3$ grid, scale by $\frac{1}{3}$ in both directions.
+    
+    \item \textbf{Rotation/Reflection:} Determine what rotation or reflection is needed so the curve segment connects properly with adjacent sub-squares.
+    
+    \item \textbf{Translation:} Determine the offset to position the transformed curve in the correct sub-square.
+\end{enumerate}
+
+\textbf{Method:} For each sub-square $i$:
+\begin{itemize}
+    \item Identify how the curve should enter and exit the sub-square
+    \item Determine what transformation of the original square pattern achieves this
+    \item Express as $M_i(x,y) = (ax + by + c, dx + ey + f)$
+\end{itemize}
+
+\textbf{Example for $M_0$:}
+\begin{itemize}
+    \item Sub-square 0 is at position $(0,0)$ to $(\frac{1}{3}, \frac{1}{3})$
+    \item The transformation $M_0(x,y) = (\frac{y}{3}, \frac{x}{3})$ swaps $x$ and $y$ (90° rotation) and scales by $\frac{1}{3}$
+    \item This creates the correct curve segment that starts at $(0,0)$ and connects to sub-square 1
+\end{itemize}
+
+\end{example}
+
+\begin{example}[Problem 3b: Space-filling curves]
+
+Find the parameter $t$ such that $m(t) = (1/2, 1/2)$.
+
+\textbf{Solution:}
+
+\begin{enumerate}
+    \item \textbf{Locate $(1/2, 1/2)$ in the grid:} 
+    In the second iteration's $3 \times 3$ grid, the point $(1/2, 1/2)$ lies in the center sub-square (sub-square 4). Therefore, the first digit is $n_1 = 4$, so $t$ starts with $0_9.4\ldots$
+    
+    \item \textbf{Check if $(1/2, 1/2)$ is a fixed point:}
+    Given $M_4(x,y) = (-y/3 + 2/3, -x/3 + 2/3)$, we solve:
+    \begin{align}
+        1/2 &= -y/3 + 2/3 \Rightarrow y = 1/2\\
+        1/2 &= -x/3 + 2/3 \Rightarrow x = 1/2
+    \end{align}
+    Therefore $M_4(1/2, 1/2) = (1/2, 1/2)$, confirming $(1/2, 1/2)$ is a fixed point of $M_4$.
+    
+    \item \textbf{Determine subsequent digits:}
+    Since $(1/2, 1/2)$ is a fixed point of $M_4$, it remains in sub-square 4 at every level. Therefore, all digits are 4: $t = 0_9.\overline{4}$
+    
+    \item \textbf{Convert to decimal:}
+    \begin{align}
+        0_9.\overline{4} &= \frac{4}{9} + \frac{4}{81} + \frac{4}{729} + \ldots \\
+        &= \frac{4}{9} \cdot \frac{1}{1-\frac{1}{9}} = \frac{4}{9} \cdot \frac{9}{8} = \frac{1}{2}
+    \end{align}
+    
+    \item \textbf{Verification:}
+    Since $t = 1/2 = 0_9.\overline{4}$:
+    $$m(1/2) = M_4 \circ M_4 \circ M_4 \circ \cdots (0,0) = \lim_{n \to \infty} M_4^n(0,0) = (1/2, 1/2)$$
+    The limit converges to the fixed point of $M_4$.
+\end{enumerate}
+
+\textbf{Key insights:}
+\begin{itemize}
+    \item The center of parameter space ($t = 1/2$) maps to the center of the unit square $((1/2, 1/2))$.
+    \item Fixed point analysis simplifies the recursive calculation.
+    \item Function composition ($M_4 \circ M_4 \circ \cdots$) determines the mapping, while addition converts the base-9 representation to decimal.
+    \item The expression $M_4 \circ M_4 \circ M_4 \circ \cdots (0,0)$ is the expansion of the Meurthe function $m$ applied to $t = 0_9.\overline{4}$ (which equals $1/2$). For infinite compositions to converge, the limit point must be a fixed point of the operator—a fundamental property of space-filling curves.
+\end{itemize}
+
+\textbf{Answer:} $t = 1/2$
+\end{example}
+
+\begin{example}[Problem 4: Haar Wavelet Transform in 1D]
+The goal is to implement a Python function that performs the Haar wavelet transform on a 1D data sequence. The Haar wavelet is used in multi-resolution data analysis, where each element in the transformed array provides information about the data at different scales.
+\textbf{Solution Approach:}
+The Haar wavelet transform recursively decomposes a signal into averages (low-frequency components) and differences (high-frequency details). Given a filter function that processes pairs of elements, we apply it recursively to achieve a complete multi-resolution decomposition.
+\textbf{Implementation:}
+\begin{lstlisting}[language=Python]
+def dwt_1d(c, jmax):
+"""
+Performs 1D Discrete Wavelet Transform using Haar wavelets.
+Parameters:
+- c: Input array (modified in-place)
+- jmax: Current size of the array to process
+
+After transformation:
+- c[0]: Overall average of the entire signal
+- c[1]: Low-frequency detail (difference between halves)
+- c[2:]: Higher-frequency details at successive scales
+"""
+# Base case: nothing to do for single element
+if jmax == 1:
+    return
+
+# Apply filter to current level
+# This computes averages in first half, differences in second half
+filter_1d(c, jmax)
+
+# Recursively process the averages (first half)
+# This creates a multi-resolution representation
+dwt_1d(c, jmax // 2)
+\end{lstlisting}
+\textbf{How it works:}
+\begin{enumerate}
+\item \textbf{Level 1:} Process all elements, storing averages in the first half and differences in the second half
+\item \textbf{Level 2:} Process only the averages from Level 1, further decomposing them
+\item \textbf{Continue recursively} until only one average remains
+\end{enumerate}
+\textbf{Example:} For array [2, 4, 6, 8]:
+\begin{itemize}
+\item Initial: [2, 4, 6, 8]
+\item After Level 1: [3, 7, -1, -1] (averages: 3, 7; differences: -1, -1)
+\item After Level 2: [5, -2, -1, -1] (overall average: 5; scale differences: -2, -1, -1)
+\end{itemize}
+The final array contains the signal decomposed into different frequency components, useful for compression, denoising, and analysis.
+\end{example}
+
+\begin{example}[Problem 4b: Haar Wavelet Transform in 2D]
+Implement a Python function that performs the 2D Haar wavelet transform using the provided 1D implementation.
+
+\textbf{Solution Approach:}
+The 2D Haar wavelet transform applies the 1D transform along rows and columns, creating a multi-resolution decomposition with four quadrants at each level.
+
+\textbf{Implementation:}
+\begin{lstlisting}[language=Python]
+def dwt_2d(image, jmax):
+    """
+    Performs 2D Discrete Wavelet Transform using Haar wavelets.
+    
+    Parameters:
+    - image: 2D array of size 2^p x 2^p (modified in-place)
+    - jmax: Current size of the subimage to process
+    
+    After transformation, the image contains:
+    - Top-left (LL): Low frequencies in both directions
+    - Top-right (LH): Vertical edges (horizontal high-freq)
+    - Bottom-left (HL): Horizontal edges (vertical high-freq)  
+    - Bottom-right (HH): Diagonal edges and noise
+    """
+    # Base case
+    if jmax <= 1:
+        return
+    
+    # Apply 1D DWT along all rows
+    for row in range(jmax):
+        row_data = image_row(image, row, jmax)
+        dwt_1d(row_data, jmax)
+        for col in range(jmax):
+            image[row][col] = row_data[col]
+    
+    # Apply 1D DWT along all columns
+    for col in range(jmax):
+        column_data = image_col(image, col, jmax)
+        dwt_1d(column_data, jmax)
+        for row in range(jmax):
+            image[row][col] = column_data[row]
+    
+    # Recursive call on top-left quadrant (LL)
+    dwt_2d(image, jmax // 2)
+\end{lstlisting}
+
+\textbf{How it works:}
+\begin{enumerate}
+    \item \textbf{Row transformation:} Apply 1D DWT to each row, splitting the image into left (low-frequency) and right (high-frequency) halves.
+    
+    \item \textbf{Column transformation:} Apply 1D DWT to each column, creating four quadrants:
+    \begin{itemize}
+        \item \textbf{LL (top-left):} Averages of averages - smoothed version
+        \item \textbf{LH (top-right):} Row averages, column differences - vertical edges
+        \item \textbf{HL (bottom-left):} Row differences, column averages - horizontal edges
+        \item \textbf{HH (bottom-right):} Differences of differences - diagonal edges and noise
+    \end{itemize}
+    
+    \item \textbf{Recursive decomposition:} Process the LL quadrant recursively to create a multi-resolution representation.
+\end{enumerate}
+
+\textbf{Key insight:} Averages act as low-pass filters (preserving smooth variations), while differences act as high-pass filters (capturing rapid changes and edges).
+
+\textbf{Further questions:} Does it matter if you process rows first or columns first?
+\end{example}
+
+\begin{example}[Problem 4c: Deriving formula for inverse Haar wavelet coefficients]
+We are given the formulas which describe the averaging and differencing performed by the forward Haar wavelet transform:
+\begin{align}
+c_j^{(l)} &= \frac{1}{2}c_{2j}^{(l+1)} + \frac{1}{2}c_{2j+1}^{(l+1)} \quad \text{(averaging)}\\
+d_j^{(l)} &= \frac{1}{2}c_{2j}^{(l+1)} - \frac{1}{2}c_{2j+1}^{(l+1)} \quad \text{(differencing)}
+\end{align}
+
+Using these formulas, we derive formulas for the coefficients of the inverse Haar wavelet transform.
+
+\textbf{Solution:}
+We transform the given forward transform formulas into a system of equations and solve for the finer level coefficients $c_{2j}^{(l+1)}$ and $c_{2j+1}^{(l+1)}$.
+
+\begin{enumerate}
+\item \textbf{Add equations (1) and (2):}
+\begin{align}
+c_j^{(l)} + d_j^{(l)} &= \frac{1}{2}c_{2j}^{(l+1)} + \frac{1}{2}c_{2j+1}^{(l+1)} + \frac{1}{2}c_{2j}^{(l+1)} - \frac{1}{2}c_{2j+1}^{(l+1)}\\
+&= c_{2j}^{(l+1)}
+\end{align}
+
+\item \textbf{Subtract equation (2) from equation (1):}
+\begin{align}
+c_j^{(l)} - d_j^{(l)} &= \frac{1}{2}c_{2j}^{(l+1)} + \frac{1}{2}c_{2j+1}^{(l+1)} - \frac{1}{2}c_{2j}^{(l+1)} + \frac{1}{2}c_{2j+1}^{(l+1)}\\
+&= c_{2j+1}^{(l+1)}
+\end{align}
+\end{enumerate}
+
+\textbf{Result:} The inverse Haar wavelet transform formulas are:
+\begin{align}
+\boxed{c_{2j}^{(l+1)} = c_j^{(l)} + d_j^{(l)}} \quad \text{(even indices)}\\
+\boxed{c_{2j+1}^{(l+1)} = c_j^{(l)} - d_j^{(l)}} \quad \text{(odd indices)}
+\end{align}
+
+\textbf{Key insight:} The inverse transform reconstructs finer-level coefficients by combining the coarse-level averages with the detail coefficients. Adding recovers even-indexed coefficients, while subtracting recovers odd-indexed coefficients.
+\end{example}
+
+\begin{warning}
+    Common mistake: Don't forget to check the domain when finding extrema!
+\end{warning}
+
+% Section 5: Problem Solving Strategies
+\section{Problem Solving Strategies}
+
+\subsection{General Approach}
+\begin{enumerate}
+    \item \textbf{Understand the problem:} Read carefully and identify what's given and what's asked
+    \item \textbf{Plan:} Choose appropriate methods/theorems
+    \item \textbf{Execute:} Carry out the calculations
+    \item \textbf{Check:} Verify your answer makes sense
+\end{enumerate}
+
+\subsection{Specific Techniques}
+\begin{reviewbox}[Technique 1: Integration by Parts]
+    When to use: Products of functions where one becomes simpler when differentiated
+    
+    Formula: $\int u\,dv = uv - \int v\,du$
+    
+    Example types:
+    \begin{itemize}
+        \item $\int x e^x\,dx$
+        \item $\int x \sin x\,dx$
+        \item $\int \ln x\,dx$
+    \end{itemize}
+\end{reviewbox}
+
+% Section 6: Quick Reference
+\section{Quick Reference Sheet}
+
+\subsection{Formulas at a Glance}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Concept} & \textbf{Formula} \\
+\hline
+Derivative of $x^n$ & $nx^{n-1}$ \\
+\hline
+Chain Rule & $(f \circ g)'(x) = f'(g(x)) \cdot g'(x)$ \\
+\hline
+Product Rule & $(fg)' = f'g + fg'$ \\
+\hline
+Quotient Rule & $\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Common Pitfalls}
+\begin{itemize}
+    \item[\important{}] Forgetting the chain rule
+    \item[\important{}] Sign errors in integration by parts
+    \item[\important{}] Not checking endpoints for absolute extrema
+\end{itemize}
+
+% Section 7: Practice Problems
+\section{Practice Problems}
+
+\subsection{Basic Problems}
+\begin{enumerate}
+    \item Find the derivative of $f(x) = x^3 \sin(2x)$
+    \item Evaluate $\int_0^{\pi} x \cos x\,dx$
+    \item Find all critical points of $g(x) = x^3 - 3x^2 + 2$
+\end{enumerate}
+
+\subsection{Advanced Problems}
+\begin{enumerate}
+    \item Prove that if $f$ is differentiable and $f'(x) > 0$ for all $x \in (a,b)$, 
+          then $f$ is strictly increasing on $(a,b)$.
+    \item Find the volume of the solid of revolution...
+\end{enumerate}
+
+% Section 8: Summary
+\section{Summary and Key Takeaways}
+
+\begin{keypoint}
+    \textbf{Basis Functions in Sparse Grids}
+    \begin{enumerate}
+        \item \textbf{Start with 1D hat functions:} The piecewise linear hat function at level $l$ and position $i$ is:
+        $$\phi_{l,i}(x) = \max(0, 1 - |2^l \cdot x - i|)$$
+        This creates a tent shape with peak value 1 at $x = i \cdot 2^{-l}$, linearly decreasing to 0 at neighboring grid points.
+        
+        \item \textbf{2D basis functions via tensor product:} 
+        $$\phi_{\vec{l},\vec{i}}(\vec{x}) = \phi_{l_1,i_1}(x_1) \cdot \phi_{l_2,i_2}(x_2)$$
+        
+        \item \textbf{Hierarchical construction:} Each level adds new information (hierarchical surplus) not captured by coarser levels:
+        $$W_l = V_l - V_{l-1}$$
+        where $V_l$ is the space of piecewise linear functions on grid level $l$.
+        
+        \item \textbf{Basis functions represent differences:} Each basis function captures what's new at its level, not redundant information from coarser grids.
+        
+        \item \textbf{Why odd indices only:} Even indices coincide with points from coarser levels. For example, at level 2, index $i=2$ gives point $2 \cdot 2^{-2} = 0.5$, which already exists at level 1 with $i=1$.
+    \end{enumerate}
+\end{keypoint}
+
+\subsection{Connections to Other Topics}
+\begin{itemize}
+    \item This material is fundamental for [next topic]
+    \item It builds upon [previous topic]
+    \item Applications include [real-world example]
+\end{itemize}
+
+% Appendices
+\appendix
+\section{Additional Resources}
+\begin{itemize}
+    \item Textbook: Chapter X, Sections Y-Z
+    \item Online resource: \url{https://example.com}
+    \item Practice problems: Problem set 
+\end{itemize}
+
+\section{Detailed Proofs}
+% Include detailed proofs that were omitted in the main text
+
+\end{document}
